@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>招贤纳士_v3.0</title>
+    <link href="http://odbrcaf4i.bkt.clouddn.com/core.css" rel="stylesheet"/>
+
+    <script src="http://odbrcaf4i.bkt.clouddn.com/jquery.min.js"></script>
+    <script src="http://odbrcaf4i.bkt.clouddn.com/jquery.easing.1.3.js"></script>
+    <script src="http://odbrcaf4i.bkt.clouddn.com/atom.js"></script>
+    <script src="http://odbrcaf4i.bkt.clouddn.com/Utils.js"></script>
+    <script src="http://odbrcaf4i.bkt.clouddn.com/base.js"></script>
+    <script src="http://odbrcaf4i.bkt.clouddn.com/handler.js"></script>
+
+    <!--表单信息填写-->
+    <script src="http://odbrcaf4i.bkt.clouddn.com/view.js"></script>
+    <script type="text/javascript">
+        if (!document.getElementsByClassName) {
+            window.location.href = "http://202.202.43.125/join/ie88/";
+        }
+    </script>
+
+</head>
+
+
+
+
+<body style="background-color: #cccc99">
+<div id="scrollToTop">
+    <img id="scrollToTop-img" src="http://odbrcaf4i.bkt.clouddn.com/scrollToTop.png" width="61" height="52"/>
+    <div>返回顶部</div>
+    <script>
+        atom(function () {
+            var t = null;
+            atom("#scrollToTop-img").addEventListener("mouseover", function () {
+                if (t !== null) {
+                    return;
+                }
+                t = setInterval(function () {
+                    $("#scrollToTop-img").css({top: Utils.getRandomInt(-2, 2), left: Utils.getRandomInt(-2, 2)});
+                }, 30);
+            }, false);
+            atom("#scrollToTop-img").addEventListener("mouseout", function () {
+                clearInterval(t);
+                t = null;
+            });
+            atom("#scrollToTop-img").addEventListener("click", function () {
+                var ele = atom.UA.name == "chrome" ? document.body : document.body.parentNode;
+                $(ele).animate({scrollTop: 0}, 1000, "easeInCubic");
+            });
+        });
+    </script>
+</div><!-- /scrollToTop -->
+<div id="joinPageClone">
+    <div class="wrap">
+        <div id="joinPageClone-container1" class="joinPageClone-container">
+        </div>
+        <div id="joinPageClone-container2" class="joinPageClone-container">
+        </div>
+        <div id="joinPageClone-container3" class="joinPageClone-container">
+        </div>
+    </div>
+
+</div><!-- /joinPageClone -->
+<div id="joinPage">
+    <div class="wrap">
+        <div class="_wrap" style="background-color: #cccccc">
+            <img id="joinPage-logo" src="http://odbrcaf4i.bkt.clouddn.com/joinPage-logo.png" width="144" height="30"/>
+            <form id="joinPage-form" method="post">
+                <div>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/joinPage-name.png" width="31" height="14"/><input id="studentName"
+                                                                                                 type="text"
+                                                                                                 name="name"/>
+                </div>
+                <div>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/joinPage-phoneNumber.png" width="68" height="16"/><input title="请填写手机号码哦"
+                                                                                                        id="phoneNumber"
+                                                                                                        type="tel"
+                                                                                                        name="phoneNumber"/>
+                </div>
+                <div>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/joinPage-section.png"/>
+                    <select name="section" id="sectionList">
+                        <option value="1">物联网工程</option>
+                        <option value="2">计算机科学与技术</option>
+                        <option value="3">软件工程</option>
+                        <option value="4">网络工程</option>
+                        <option value="5">信息管理</option>
+                    </select>
+                </div>
+                <div>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/joinPage-introduction.png"/><input title="不要超过200字哦" id="introduction"
+                                                                                  type="text" name="introduction"/>
+                </div>
+                <div>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/submit.png" id="joinPage-form-submit" onclick="submitForm()"/>
+                    <img src="http://odbrcaf4i.bkt.clouddn.com/close.png" id="join-close"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div><!-- joinPage -->
+<div class="wrap">
+    <div id="iWant">
+        <img id="iWant-img" src="http://odbrcaf4i.bkt.clouddn.com/iWant.png" width="44" height="113"
+             style="opacity: 0; display: none;"/>
+    </div>
+    <script>
+        atom(function () {
+            var expended = false,
+                    clickHandler = function () {
+                        if (!expended) {
+                            atom("#joinPageClone").style.display = "block";
+                            atom.global.get("expendClone")(1000);
+                        } else {
+                            atom.global.get("unexpendClone")(1000);
+                        }
+                        expended = !expended;
+                    };
+            atom("#join-close").addEventListener("click", clickHandler, false);
+            window.addEventListener("DOMContentLoaded", function () {
+                document.querySelector("._buttons ._joinUs").addEventListener("click", clickHandler, false);
+            }, false);
+        });
+    </script>
+</div>
+
+
+<div id="page1" class="page">
+    <div id="page1-nav">
+        <div class="wrap">
+            <img class="_logo" src="http://odbrcaf4i.bkt.clouddn.com/logo.png" width="167" height="61"/>
+            <div class="_buttons">
+                <img class="_home" src="http://odbrcaf4i.bkt.clouddn.com/home.png"/>
+                <img class="_GL" src="http://odbrcaf4i.bkt.clouddn.com/GL.png"/>
+                <img class="_SJ" src="http://odbrcaf4i.bkt.clouddn.com/SJ.png"/>
+                <img class="_QD" src="http://odbrcaf4i.bkt.clouddn.com/QD.png"/>
+                <img class="_CX" src="http://odbrcaf4i.bkt.clouddn.com/CX.png"/>
+                <img class="_joinUs" src="http://odbrcaf4i.bkt.clouddn.com/joinUs.png"/>
+            </div>
+        </div>
+    </div><!-- /page1-nav -->
+    <div class="wrap">
+        <div id="page1-hello">~ Hello World! ~</div>
+        <div id="page1-intro">
+	  <span id="page1-text">
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="ta">翼灵</span>物联工作室成立于2013年，隶属于物联网工程教研室，是一个集学生创新与项目实战于一体的科学性实验室。<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;团队由留美教师梁宗文为指导老师。目前团队以探索物联网前沿科技为主导，形成嵌入式开发、移动端开发、服务器开发三大完整培养模式，
+		以科研竞赛与外包项目实战为团队主导工作。团队各项成果丰硕，2年内承接外包项目6项，科研竞赛获省级以上奖项11项，国家级奖项7项。
+
+	  </span>
+            <img id="page1-intro-leftHighLight" src="http://odbrcaf4i.bkt.clouddn.com/highLight.png" width="262" height="322"
+                 style="left: -113.773px;"/>
+            <img id="page1-intro-rightHighLight" src="http://odbrcaf4i.bkt.clouddn.com/highLightRight.png" width="267" height="321"
+                 style="right: -118.068px;"/>
+        </div>
+    </div>
+
+</div><!-- /page1 -->
+
+<div id="page2" class="page" style="top: 857px;">
+    <div class="wrap">
+        <img id="page2-logo" src="http://odbrcaf4i.bkt.clouddn.com/page2-logo.png" width="162" height="39"/>
+        <div id="page2-intro">
+            <div id="page2-intro-searchBox">today is sun</div>
+            <div id="page2-intro-text"><span class="ta"> WEB</span>方向作为翼灵物联网工作室发展最快的方向，完成团队官网前后端搭建，
+                形成了从前端网页到后端服务器架构的完整培养模式。随着从互联网到物联网的转变，web服务成为物联网系统的核心组成，稳坐第一把交椅。
+                本团队WEB开发方向以项目外包为推动。培养内容涵盖J2EE，数据库，通用框架和WEB服务端技术。本方向旨在搭建鲁棒最强的后台系统，给用户最流畅与舒适的体验。
+            </div>
+        </div>
+    </div>
+
+</div><!-- /page2 -->
+<!--视觉设计部-->
+<div id="page3" class="page" style="top: 1712px;">
+    <div class="shadow"><img src="http://odbrcaf4i.bkt.clouddn.com/shadow.png" width="958" height="220"/></div>
+    <div class="wrap">
+        <img id="page3-logo" src="http://odbrcaf4i.bkt.clouddn.com/page3-logo.png" width="164" height="32"/>
+        <div id="page3-intro">
+            <div id="page3-intro-centerImage"></div>
+            <div style="padding-top: 470px;">
+                <div id="page3-intro-text"><span class="ta">嵌入式</span> 开发方向作为翼灵物联工作室最早研究方向，形成了从零基础到前沿就业的完整人才培养模式。
+                    时势造英雄，随着智能终端设备和穿戴式设备的普及，物联网时代将是一个属于嵌入式的时间。本团队嵌入式开发方向以实际项目为核心导向，
+                    培养内容涵盖单片机开发、STM32微控制器开发、ZIGBEE无线传感网络开发、物联网相关传感器技术、LINUX应用开发、LINUX系统移植、LINUX驱动程序开发
+                    等技术。本方向致力于行业前沿科技为你的大学发展保驾护航。
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /page3 -->
+
+<div id="page4" class="page" style="top: 2567px;">
+    <div class="shadow"><img src="http://odbrcaf4i.bkt.clouddn.com/shadow.png" width="958" height="151"/></div>
+    <div class="wrap">
+        <img id="page4-logo" src="http://odbrcaf4i.bkt.clouddn.com/page4-logo.png" width="170" height="38"/>
+        <div id="page4-pre">
+            <div id="frame-left"></div>
+            <div id="frame-right"></div>
+            <div id="chrome" class="page4-pre-word" style="top: 61.7772px;">Chrome</div>
+            <div id="ie" class="page4-pre-word" style="top: 155.059px;">IE</div>
+            <img id="ie_pic" src="http://odbrcaf4i.bkt.clouddn.com/iepic.png"/>
+            <div id="jquery" class="page4-pre-word" style="top: 314.455px;">jQuery</div>
+            <div id="opera" class="page4-pre-word" style="top: 20.9903px;">Opera</div>
+            <div id="html5" class="page4-pre-word" style="top: 1.78256px;">HTML5</div>
+            <div id="firefox" class="page4-pre-word" style="top: 52.9064px;">Firefox</div>
+            <div id="ajax" class="page4-pre-word" style="top: 102.228px;">Ajax</div>
+            <img id="web" src="http://odbrcaf4i.bkt.clouddn.com/web.png"/>
+            <div id="css3" class="page4-pre-word" style="top: 323.788px;">CSS3</div>
+            <img id="javascript" src="http://odbrcaf4i.bkt.clouddn.com/javascript.png"/>
+        </div>
+
+        <div id="page4-intro">
+            <p>&lt;html&gt;</p>
+            <p style="text-indent:2em;">&lt;h3&gt;<img id="qd-intro" src="http://odbrcaf4i.bkt.clouddn.com/intro.png"/>&lt;/h3&gt;</p>
+            <p style="text-indent:2em;">&lt;ul&gt;</p>
+            <p style="text-indent:4em;">&lt;li&gt;</p>
+            <p style="text-indent:6em;" class="introduction">
+                Ta是分析用户操作习惯，设计交互流程、内容和界面的装饰家。ta负责——产品的交互设计工作，建立产品用户模型、配合运营部进行用户需求研究，根据用户的需求分析给出最优的前台技术解决平台，了解后端设计实施，提供前端与后端技术应用解决方案；与运营人员一起管理产品的体验，跟踪产品的体验效果数据，持续改善产品的用户体验</p>
+            <p style="text-indent:4em;">&lt;/li&gt;</p>
+            <p style="text-indent:2em;">&lt;/ul&gt;</p>
+            <p>&lt;/html&gt;</p>
+        </div>
+    </div>
+
+</div><!-- page4 -->
+
+<div id="page5" class="page" style="top: 3452px;">
+    <div class="shadow"><img src="http://odbrcaf4i.bkt.clouddn.com/shadow.png" width="958" height="151"/></div>
+    <div class="wrap">
+        <img id="page5-logo" src="http://odbrcaf4i.bkt.clouddn.com/page5_name.png" width="162" height="34"/>
+        <div id="page5Pic">
+            <div class="shadowline"></div>
+            <div class="shadow"></div>
+            <img class="cxPic" src="http://odbrcaf4i.bkt.clouddn.com/page5Pic.png"/>
+        </div>
+        <div id="page5Intro">
+            <div class="introUp">
+
+
+            </div>
+            <div class="introDown">
+                <img class="introName" src="http://odbrcaf4i.bkt.clouddn.com/page5_introN.png"/>
+
+                <div class="introCont">
+                    <div class="introduce">
+                        <span>移动开发</span>作为翼灵物联工作室三大研究方向之一，拥有着举足轻重的地位。移动开发部负责智能手机App的设计、
+                        开发、维护，部门成立较早，拥有完整的教学体系，能够培养出能力拔萃的全方位人才。部门以Android应用开发为主线，
+                        以开源项目开发、外包项目开发以及上架App开发为目标，内部定期对成员进行培训，培训内容涵盖C、Java编程语言基础、
+                        App界面设计、数据库基础、开源库应用、设计模式等。部门秉承“习惯解决问题，以解决问题为习惯”的宗旨，
+                        带领新成员走入多姿多彩的移动开发之路。
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /page5 -->
+
+<br/>
+<br/>
+
+<!-- 命名惨不忍睹 定位我已经无话可说 -->
+<br/>
+<div id="footer" class="page" style="top: 5162px;">
+    <!--<div class="shadow"><img src="http://odbrcaf4i.bkt.clouddn.com/shadow.png" width="958" height="151"></div>-->
+    <div id="footer-links">
+        <div style="text-align: center ; margin:0 auto"><img src="http://odbrcaf4i.bkt.clouddn.com/footer_US.png"/></div>
+        &nbsp;
+        <div id="links-left">
+            <img src="http://odbrcaf4i.bkt.clouddn.com/footer_TD.png"/>
+            <img src="http://odbrcaf4i.bkt.clouddn.com/footer_DATE.png"/>&nbsp;&nbsp;&nbsp;
+            <img src="http://odbrcaf4i.bkt.clouddn.com/footer_LOC.png"/>
+            &nbsp;&nbsp;
+            <div>
+
+                <!--<a href="www.swpuiot.com" class="links"></a>-->
+                <img src="http://odbrcaf4i.bkt.clouddn.com/footer_PHONE.png"/>
+                <img src="http://odbrcaf4i.bkt.clouddn.com/footer_DIPLO.png"/>
+            </div>
+        </div >
+
+        &nbsp;
+        <div style="position: relative;left: 30px"><img src="http://odbrcaf4i.bkt.clouddn.com/footer_LINK.png"/></div>
+        &nbsp;
+        <div id="links-right">
+            <a href="http://www.swpu.edu.cn/" class="links"><img src="http://odbrcaf4i.bkt.clouddn.com/footer_DOOR.png"/></a>
+            <a href="http://scs.swpu.edu.cn/" class="links"><img src="http://odbrcaf4i.bkt.clouddn.com/footer_COMPUTER.png"/></a>
+        </div>
+    </div>
+    <div class="wrap" style="position:relative;top:80px;">WingLing © 2016-2019</div>
+</div>
+
+
+</body>
+</html>
